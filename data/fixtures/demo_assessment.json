@@ -1,0 +1,16 @@
+{
+  "score":20,
+  "band":"Some risk",
+  "confidence":"Fixture demonstration",
+  "action":"Review the cited weather notice and check your airline before leaving. Allow extra time if the airline advises it.",
+  "action_reasons":["Illustrative weather advisory at the departure airport.","Illustrative FAA delay notice at the departure airport."],
+  "evidence":[
+    {"source":"National Weather Service (fixture)","title":"Illustrative weather advisory at departure airport","detail":"Bundled sample: a weather advisory overlaps the approximate departure window. This is fabricated demonstration content.","url":"https://api.weather.gov/alerts/active","observed_at":"2026-11-05T18:00:00Z","severity":"moderate","signal_id":"fixture-weather","stale":false,"cache_age_seconds":null},
+    {"source":"FAA NAS Status (fixture)","title":"Illustrative departure delay","detail":"Bundled sample: a fabricated 25-minute delay notice for demonstration. This is not an actual FAA event.","url":"https://nasstatus.faa.gov/api/airport-status-information","observed_at":"2026-11-05T18:00:00Z","severity":"moderate","signal_id":"fixture-faa-delay","stale":false,"cache_age_seconds":null}
+  ],
+  "source_status":[
+    {"source":"Fixture pack","scope":"selected route","state":"data","message":"Deterministic bundled fixture mode. Not live data.","checked_at":"2026-11-05T18:00:00Z","cache_age_seconds":null}
+  ],
+  "coverage":{"checks_total":1,"checks_responded":1,"checks_failed":0,"sources_responded":["Fixture pack"],"minimum_coverage_met":true},
+  "assumptions":["Illustrative fixture only; not live conditions.","Departure time is interpreted in origin airport local time.","Estimated arrival uses the user-selected duration.","Origin/arrival weather windows are approximate, each two hours around the estimate."]
+}

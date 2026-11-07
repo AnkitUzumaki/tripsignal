@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.Python
+build/
+dist/
+*.egg-info/
+
+# Local environments and configuration
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Runtime data, logs, editor and operating-system files
+data/cache/
+*.log
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,15 @@
+{
+  "host": "127.0.0.1",
+  "port": 8000,
+  "request_timeout_seconds": 9,
+  "source_cache_ttl_seconds": 300,
+  "maximum_request_bytes": 16384,
+  "maximum_forecast_days": 7,
+  "sigmet_corridor_nm": 50,
+  "risk_index": {
+    "high_signal_points": 25,
+    "moderate_signal_points": 10,
+    "some_risk_at": 10,
+    "elevated_at": 45
+  }
+}

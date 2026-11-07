@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#12382e"><title>TripSignal | Travel disruption brief</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="top"><div class="wrap brand"><div><span class="kicker">Operations intelligence · prototype</span><h1>TripSignal</h1></div><span class="live-tag"><i></i> Public sources</span></div></header>
+<main class="wrap">
+  <section class="intro"><div><p class="kicker dark">Travel disruption brief</p><h2>Know what could disrupt the trip.</h2><p class="sub">A route-level scan of public weather and FAA operational signals, with the evidence behind it.</p></div><p id="checked" class="stamp"></p></section>
+  <form id="form" class="form card">
+    <div class="field"><label for="origin">From</label><select id="origin" required></select></div>
+    <div class="field"><label for="destination">To</label><select id="destination" required></select></div>
+    <div class="field"><label for="date">Travel date</label><input id="date" type="date" required></div>
+    <div class="field"><label for="departure">Local departure time</label><input id="departure" type="time" value="09:00" required></div>
+    <div class="field"><label for="duration">Estimated flight duration</label><div class="duration"><input id="duration" type="number" min="1" max="16" step="0.5" value="6" required><span>hours</span></div></div>
+    <button id="submit" class="primary" type="submit">Assess trip <span aria-hidden="true">→</span></button>
+    <label class="demo-toggle"><input id="demo" type="checkbox"><span>Use offline demo fixture</span><small>Clearly labelled sample data; no live feeds are called.</small></label>
+  </form>
+  <p class="assumption-line">Departure is interpreted in the origin airport’s local time. Destination weather uses the estimated arrival time and selected duration.</p>
+  <div id="message" class="message hidden" role="status"></div>
+  <section id="result" class="hidden" aria-live="polite">
+    <div class="verdict card"><div><p class="kicker dark">Assessment</p><h2 id="band"></h2><p id="route" class="route"></p><p id="timing" class="timing"></p></div><div class="score"><span class="label">Directional risk index</span><strong id="score"></strong><span id="confidence" class="label"></span></div></div>
+    <div class="action-card"><div class="action-icon">↗</div><div><p class="kicker dark">Suggested next step</p><p id="action" class="action-text"></p><details><summary>Why this action?</summary><ul id="reasons"></ul></details></div></div>
+    <div class="section-head"><div><p class="kicker dark">Evidence trail</p><h3>Signals checked</h3></div><span id="evidence-total" class="stamp"></span></div>
+    <div id="evidence" class="evidence-grid"></div>
+    <div class="section-head status-title"><div><p class="kicker dark">Source coverage</p><h3>What responded</h3></div><span id="coverage-summary" class="stamp"></span></div>
+    <div id="statuses" class="status-list"></div>
+    <div class="limits card"><p class="kicker dark">Assumptions and limits</p><ul id="assumptions"></ul><p class="limit-note">This is not flight-specific status, a calibrated delay probability, or a guarantee of normal operations. Confirm with your airline.</p></div>
+  </section>
+</main>
+<footer class="wrap">TripSignal · assessment results are advisory · source links open in a new tab</footer>
+<script src="/app.js" defer></script>
+</body>
+</html>
